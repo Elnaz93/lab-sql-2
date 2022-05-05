@@ -1,0 +1,15 @@
+select * from sakila.actor;
+select * from sakila.actor where first_name like 'Scarlett%';
+select * from sakila.actor where last_name like 'JOHANSSON%';
+select count(*) from sakila.film ;  
+select count(*) from sakila.rental;
+select min(rental_duration) , max(rental_duration) from sakila.film;
+select min(length) , max(length) from sakila.film ;
+select convert(length, time) from sakila.film;
+select date_format(sec_to_time(avg(length)*60), '%H:%i') from sakila.film;
+select * from sakila.film where length > 180 ;
+select * from sakila.customer ;
+ALTER TABLE sakila.customer ADD COLUMN newfolder VARCHAR(1000);
+UPDATE sakila.customer SET newfolder = CONCAT(firstName, lastName, '-',email );
+select * from sakila.customer ;
+select Max(length) from sakila.film;
